@@ -111,7 +111,7 @@ task proguard(type: proguard.gradle.ProGuardTask, dependsOn: 'jar') {
 // Java executable wrapper for Windows //
 launch4j {
     createExe.dependsOn 'proguard'
-
+    jvmOptions = ['-Dfile.encoding=utf-8']
     version = textVersion = project.version
     fileDescription = productName = 'JD-GUI'
     errTitle 'JD-GUI Windows Wrapper'
